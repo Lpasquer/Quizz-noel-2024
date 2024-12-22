@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire Accessible</title>
+    <title>Mot de Passe et GIF</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
         }
         form {
-            max-width: 400px;
-            margin: 0 auto;
+            text-align: center;
         }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        input[type="text"], button {
-            width: 100%;
+        input[type="password"], button {
+            width: 300px;
             padding: 0.5rem;
-            margin-bottom: 1rem;
+            margin: 0.5rem 0;
             font-size: 1rem;
         }
         button {
@@ -33,24 +33,40 @@
         button:hover {
             background-color: #0056b3;
         }
+        #gif-container {
+            display: none;
+            margin-top: 20px;
+        }
+        #gif-container img {
+            max-width: 90%;
+            max-height: 90%;
+        }
     </style>
 </head>
 <body>
-    <h1>Bienvenue sur Mon Site</h1>
-    <form>
-        <label for="name">Votre nom :</label>
-        <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
-        <button type="submit">Envoyer</button>
+    <h1>Entrez le Mot de Passe</h1>
+    <form id="password-form">
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        <button type="submit">Valider</button>
     </form>
-
+    <div id="gif-container">
+        <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="GIF en grand">
+    </div>
     <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            alert(`Merci, ${name} !`);
+        const correctPassword = "secret123"; // Mot de passe à vérifier
+        const form = document.getElementById("password-form");
+        const gifContainer = document.getElementById("gif-container");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // Empêche le rechargement de la page
+            const userInput = document.getElementById("password").value;
+            if (userInput === correctPassword) {
+                gifContainer.style.display = "block"; // Affiche le GIF
+                form.style.display = "none"; // Masque le formulaire
+            } else {
+                alert("Mot de passe incorrect. Réessayez.");
+            }
         });
     </script>
-    
 </body>
 </html>
