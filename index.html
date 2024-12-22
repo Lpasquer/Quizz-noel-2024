@@ -34,6 +34,14 @@
             background-color: #0056b3;
         }
     </style>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(Merci, ${name} !);
+        });
+    </script>
 </head>
 <body>
     <h1>Bienvenue sur Mon Site</h1>
