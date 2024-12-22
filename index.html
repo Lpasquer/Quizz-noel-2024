@@ -34,14 +34,6 @@
             background-color: #0056b3;
         }
     </style>
-    <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            alert(`Merci, ${name} !`);
-        });
-    </script>
 </head>
 <body>
     <h1>Bienvenue sur Mon Site</h1>
@@ -50,5 +42,15 @@
         <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
         <button type="submit">Envoyer</button>
     </form>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Merci, ${name} !`);
+        });
+    </script>
+    
 </body>
 </html>
