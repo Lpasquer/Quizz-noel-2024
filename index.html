@@ -62,6 +62,7 @@
         const gifContainer = document.getElementById("gif-container");
 
         form.addEventListener("submit", function (e) {
+            e.preventDefault();
             const userInput = document.getElementById("password").value;
             if (userInput.toUpperCase() === correctPassword.toUpperCase()) {
                 gifContainer.style.display = "block"; // Affiche le GIF
