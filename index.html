@@ -41,10 +41,14 @@
             max-width: 90%;
             max-height: 90%;
         }
+        #reponse {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1 id="titre">Entre le bon code</h1>
+    <h1 id="reponse">Félicitations !! Vous gagnez une place pour participer à Tout le monde veut gagner le jeu des 20€</h1>
     <form id="password-form">
         <input type="password" id="password" placeholder="Mot de passe" required>
         <button type="submit">Valider</button>
@@ -62,7 +66,8 @@
             if (userInput.toUpperCase() === correctPassword.toUpperCase()) {
                 gifContainer.style.display = "block"; // Affiche le GIF
                 form.style.display = "none"; // Masque le formulaire
-                titre.textContent = "Félicitations !! Vous gagnez une place pour participer à Tout le monde veut gagner le jeu des 20€"
+                titre.style.dysplay = "none";
+                reponse.style.display = "block"
             } else {
                 alert("Mot de passe incorrect. Réessayez.");
             }
