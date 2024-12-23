@@ -44,7 +44,7 @@
     </style>
 </head>
 <body>
-    <h1>Entrez le Mot de Passe</h1>
+    <h1 id="titre">Entre le bon code</h1>
     <form id="password-form">
         <input type="password" id="password" placeholder="Mot de passe" required>
         <button type="submit">Valider</button>
@@ -53,16 +53,16 @@
         <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="GIF en grand">
     </div>
     <script>
-        const correctPassword = "secret123"; // Mot de passe à vérifier
+        const correctPassword = "Amorce"; 
         const form = document.getElementById("password-form");
         const gifContainer = document.getElementById("gif-container");
 
         form.addEventListener("submit", function (e) {
-            e.preventDefault(); // Empêche le rechargement de la page
             const userInput = document.getElementById("password").value;
-            if (userInput === correctPassword) {
+            if (userInput.toUpperCase() === correctPassword.toUpperCase()) {
                 gifContainer.style.display = "block"; // Affiche le GIF
                 form.style.display = "none"; // Masque le formulaire
+                titre.textContent = "Félicitations !! Vous gagnez une place pour participer à Tout le monde veut gagner le jeu des 20€"
             } else {
                 alert("Mot de passe incorrect. Réessayez.");
             }
