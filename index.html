@@ -67,7 +67,7 @@
             if (userInput.toUpperCase() === correctPassword.toUpperCase()) {
                 gifContainer.style.display = "block"; // Affiche le GIF
                 form.style.display = "none"; // Masque le formulaire
-                titre.style.dysplay = "none";
+                titre.style.textContent = "";
                 reponse.style.display = "block"
             } else {
                 alert("Mot de passe incorrect. Réessayez.");
