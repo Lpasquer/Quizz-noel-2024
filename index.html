@@ -43,12 +43,16 @@
         }
         #reponse {
             display: none;
+        },
+        #reponse2 {
+            display: none;
         }
     </style>
 </head>
 <body>
     <h1 id="titre">Entre le bon code</h1>
     <h1 id="reponse">Félicitations !! Vous gagnez une place pour participer à Tout le monde veut gagner le jeu des 20€</h1>
+    <h1 id="reponse2">Rendez-vous dans le salon à midi !</h1>
     <form id="password-form">
         <input type="password" id="password" placeholder="Mot de passe" required>
         <button type="submit">Valider</button>
@@ -68,6 +72,7 @@
                 gifContainer.style.display = "block"; // Affiche le GIF
                 form.style.display = "none"; // Masque le formulaire
                 titre.textContent = "";
+                reponse.style.display = "block"
                 reponse.style.display = "block"
             } else {
                 alert("Mot de passe incorrect. Réessayez.");
